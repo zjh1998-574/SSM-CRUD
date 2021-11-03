@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!--设置日志-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!--声明别名-->
+    <typeAliases>
+        <!--domain包中的类名就是别名-->
+        <package name="com.cqupt.crud.bean"/>
+    </typeAliases>
+
+    <!--声明pageHelper插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--分页参数合理化-->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+
+    <mappers>
+        <!--加载dao包中的所有mapper文件-->
+        <package name="com.cqupt.crud.dao"/>
+    </mappers>
+</configuration>
+
+
